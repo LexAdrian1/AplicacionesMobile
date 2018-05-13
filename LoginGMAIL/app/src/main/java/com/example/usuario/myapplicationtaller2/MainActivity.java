@@ -44,6 +44,16 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    public void openRegistro(View view){
+        Intent intents = new Intent(getApplicationContext(), RegistroActivity.class);
+        startActivity(intents);
+    }
+
+    public void openList(View view){
+        Intent intents = new Intent(getApplicationContext(), ListUsersActivity.class);
+        startActivity(intents);
+    }
+
     public void logeoGmail(){
         if (googleApiClient != null) {
             //Desconectado
@@ -72,9 +82,9 @@ public class MainActivity extends AppCompatActivity {
                 Log.i("Nombre",acc.getDisplayName());
                 Log.i("ID",acc.getId());
                 if (token != null){
-                    Toast.makeText(this,token,Toast.LENGTH_LONG).show();
+                    Toast.makeText(this,token,Toast.LENGTH_SHORT).show();
                 }
-                Toast.makeText(this,"Correcto",Toast.LENGTH_LONG).show();
+                Toast.makeText(this,"Correcto",Toast.LENGTH_SHORT).show();
             }
         }
     }

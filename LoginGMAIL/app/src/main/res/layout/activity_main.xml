@@ -38,6 +38,7 @@
         android:layout_marginRight="32dp"
         android:layout_marginTop="33dp"
         android:text="Inicio"
+        android:onClick="openList"
         app:layout_constraintEnd_toEndOf="@+id/editTextPass"
         app:layout_constraintTop_toBottomOf="@+id/editTextPass" />
 
@@ -49,6 +50,7 @@
         android:layout_marginStart="2dp"
         android:layout_marginTop="8dp"
         android:text="Registrarse"
+        android:onClick="openRegistro"
         app:layout_constraintStart_toStartOf="@+id/buttonInicio"
         app:layout_constraintTop_toBottomOf="@+id/buttonSignInGoogle" />
 

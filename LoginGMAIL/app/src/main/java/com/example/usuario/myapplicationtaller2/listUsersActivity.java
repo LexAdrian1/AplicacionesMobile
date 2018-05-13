@@ -11,7 +11,7 @@ import java.util.List;
 import Control.ControlArchivoObjeto;
 import Modelo.Usuario;
 
-public class listUsersActivity extends AppCompatActivity {
+public class ListUsersActivity extends AppCompatActivity {
     ListView listUsers;
 
     ControlArchivoObjeto controladorArchivo = new ControlArchivoObjeto();
