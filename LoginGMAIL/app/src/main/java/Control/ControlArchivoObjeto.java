@@ -44,6 +44,34 @@ public class ControlArchivoObjeto {
             Log.e("Error", e.toString());
         }
     }
+    public ArrayList<Usuario>  leerArchivoList(String nombre) {
+        ArrayList<Usuario> objectsList=null;
+        try {
+            FileInputStream fis = new FileInputStream(ruta + nombre);
+            ObjectInputStream in = new ObjectInputStream(fis);
+            boolean cont = true;
+            try {
+                Log.e("Try", "Entrar");
+                while (cont){
+                    Usuario p = (Usuario) in.readObject();Log.e("User", "read");
+                    if(p != null){
+                        objectsList.add(p);
+                        Log.e("User", p.toString());
+                    }else{
+                        cont=false;
+                    }
+                }
+            }catch (Exception e) {
+                e.printStackTrace();
+            }
+            fis.close();
+        } catch (FileNotFoundException e) {
+            Log.e("Error Archivo", e.toString());
+        } catch (IOException e) {
+            Log.e("Error IO", e.toString());
+        }
+        return objectsList;
+    }
 
     public Usuario leerArchivo(String nombre) {
         Usuario p = null;

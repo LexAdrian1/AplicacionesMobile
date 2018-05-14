@@ -23,8 +23,9 @@ public class ListUsersActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list_users);
         listUsers = (ListView)findViewById(R.id.listUsers);
 
-        your_array_list=controladorArchivo.leerArchivoArrayList("Usuarios.txt");
-        adapterUsers = new ArrayAdapter<>(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, your_array_list );
-        listUsers.setAdapter(adapterUsers);
+        controladorArchivo.leerArchivoList("Usuarios.txt");
+        //your_array_list=controladorArchivo.leerArchivoList("Usuarios.txt");
+        /*adapterUsers = new ArrayAdapter<>(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, your_array_list);
+        listUsers.setAdapter(adapterUsers);*/
     }
 }
