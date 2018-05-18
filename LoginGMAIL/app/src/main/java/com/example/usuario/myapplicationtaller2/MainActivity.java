@@ -16,12 +16,20 @@ import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import Control.ControlArchivoObjeto;
+import Modelo.Usuario;
+
 public class MainActivity extends AppCompatActivity {
     Button registrarse;
     SignInButton signInGoogle;
     Button ingreso;
     TextView mail;
     TextView pass;
+    ControlArchivoObjeto controladorArchivo = new ControlArchivoObjeto();
+    List<Usuario> your_array_list = new ArrayList<Usuario>();
 
     //Crear un cliente del API de google
     //Codigo de Respuesta es 9001
@@ -50,8 +58,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openList(View view){
-        Intent intents = new Intent(getApplicationContext(), ListUsersActivity.class);
-        startActivity(intents);
+
+        your_array_list=controladorArchivo.leerArchivoArrayList("Usuarios.txt");
+        for(Usuario d : your_array_list){
+            if(d.getMail() != null && d.getMail().contains(mail.getText().toString())){
+                Toast.makeText(this,"Correcto",Toast.LENGTH_SHORT).show();
+                Intent intents = new Intent(getApplicationContext(), ListUsersActivity.class);
+                startActivity(intents);
+            }
+        }
     }
 
     public void logeoGmail(){
@@ -81,6 +96,8 @@ public class MainActivity extends AppCompatActivity {
                 Log.i("Correo",acc.getEmail());
                 Log.i("Nombre",acc.getDisplayName());
                 Log.i("ID",acc.getId());
+                Intent intents = new Intent(getApplicationContext(), ListUsersActivity.class);
+                startActivity(intents);
                 if (token != null){
                     Toast.makeText(this,token,Toast.LENGTH_SHORT).show();
                 }

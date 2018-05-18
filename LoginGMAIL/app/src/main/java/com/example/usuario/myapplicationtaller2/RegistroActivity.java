@@ -19,7 +19,6 @@ public class RegistroActivity extends AppCompatActivity {
     TextView pass;
     TextView repeatPass;
     Button registro;
-
     public ArrayList<Usuario> arrayListUsers = new ArrayList<Usuario>();
     ControlArchivoObjeto controladorArchivoObjeto = new ControlArchivoObjeto();
 
@@ -36,13 +35,10 @@ public class RegistroActivity extends AppCompatActivity {
 
     public void registroUser(View view){
         if(pass.getText().toString().equals(repeatPass.getText().toString())){
-            /*arrayListUsers.add(new Usuario(name.getText().toString(),
+            arrayListUsers.add(new Usuario(name.getText().toString(),
                     mail.getText().toString(),
                     pass.getText().toString()));
-            controladorArchivoObjeto.escribirArchivoArrayList(arrayListUsers,"Usuarios.txt");*/
-            controladorArchivoObjeto.escribirArchivo(new Usuario(name.getText().toString(),
-                    mail.getText().toString(),
-                    pass.getText().toString()),"Usuarios.txt");
+            controladorArchivoObjeto.escribirArchivoArrayList(arrayListUsers,"Usuarios.txt");
             Toast.makeText(getApplicationContext(),"Usuario Registrado",Toast.LENGTH_SHORT).show();
             Intent intents = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intents);

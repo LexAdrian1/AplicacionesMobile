@@ -11,7 +11,11 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import Modelo.Usuario;
 
@@ -19,22 +23,9 @@ public class ControlArchivoObjeto {
     private File file = Environment.getExternalStorageDirectory();
     private String ruta = file.getAbsolutePath() + File.separator;
 
-    public void escribirArchivo(Usuario p, String nombre) {
-        try {
-            FileOutputStream fos = new FileOutputStream(ruta + nombre,true);
-            ObjectOutputStream out = new ObjectOutputStream(fos);
-            out.writeObject(p);
-            fos.close();
-        } catch (FileNotFoundException e) {
-            Log.e("error", e.toString());
-        } catch (IOException e) {
-            Log.e("error", e.toString());
-        }
-    }
-
     public void escribirArchivoArrayList(ArrayList<Usuario> arrayListProductos, String nombre) {
         try {
-            FileOutputStream fos = new FileOutputStream(ruta + nombre,true);
+            FileOutputStream fos = new FileOutputStream(ruta + nombre);
             ObjectOutputStream out = new ObjectOutputStream(fos);
             out.writeObject(arrayListProductos);
             fos.close();
@@ -44,54 +35,8 @@ public class ControlArchivoObjeto {
             Log.e("Error", e.toString());
         }
     }
-    public ArrayList<Usuario>  leerArchivoList(String nombre) {
-        ArrayList<Usuario> objectsList=null;
-        try {
-            FileInputStream fis = new FileInputStream(ruta + nombre);
-            ObjectInputStream in = new ObjectInputStream(fis);
-            boolean cont = true;
-            try {
-                Log.e("Try", "Entrar");
-                while (cont){
-                    Usuario p = (Usuario) in.readObject();Log.e("User", "read");
-                    if(p != null){
-                        objectsList.add(p);
-                        Log.e("User", p.toString());
-                    }else{
-                        cont=false;
-                    }
-                }
-            }catch (Exception e) {
-                e.printStackTrace();
-            }
-            fis.close();
-        } catch (FileNotFoundException e) {
-            Log.e("Error Archivo", e.toString());
-        } catch (IOException e) {
-            Log.e("Error IO", e.toString());
-        }
-        return objectsList;
-    }
-
-    public Usuario leerArchivo(String nombre) {
-        Usuario p = null;
-        try {
-            FileInputStream fis = new FileInputStream(ruta + nombre);
-            ObjectInputStream in = new ObjectInputStream(fis);
-            p = (Usuario) in.readObject();
-            fis.close();
-        } catch (FileNotFoundException e) {
-            Log.e("Error Archivo", e.toString());
-        } catch (IOException e) {
-            Log.e("Error IO", e.toString());
-        } catch (ClassNotFoundException e) {
-            Log.e("Error Persona", e.toString());
-        }
-        return p;
-    }
 
     public List<Usuario> leerArchivoArrayList(String nombre) {
-        //ArrayList<Producto> objectsList = new ArrayList<Producto>();
         List<Usuario> objectsList=null;
         try {
             FileInputStream fis = new FileInputStream(ruta + nombre);
@@ -108,4 +53,7 @@ public class ControlArchivoObjeto {
         }
         return  objectsList;
     }
+
+
+
 }
