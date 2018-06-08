@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "958186435510",
+    "firebase_url": "https://appmovil-2b0f3.firebaseio.com",
+    "project_id": "appmovil-2b0f3",
+    "storage_bucket": "appmovil-2b0f3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:958186435510:android:70ae1a731b22562d",
+        "android_client_info": {
+          "package_name": "com.example.toshibask.myapplicationtiendamovil"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "958186435510-oi48jvho45bs2ifjp5etuoqdqadrafih.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.toshibask.myapplicationtiendamovil",
+            "certificate_hash": "2720e26539c01e2c0f4b3696336d5efb1481239f"
+          }
+        },
+        {
+          "client_id": "958186435510-ie4jgfnauuk4h93kqi78cptbf3i55cgr.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "958186435510-ie4jgfnauuk4h93kqi78cptbf3i55cgr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8IvfcoZvepveoGGL8_dBC7RwUS7ikg1o"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "958186435510-ie4jgfnauuk4h93kqi78cptbf3i55cgr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
