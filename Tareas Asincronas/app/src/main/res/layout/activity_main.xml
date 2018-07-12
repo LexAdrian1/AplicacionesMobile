@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteY="81dp">
+
+    <Button
+        android:id="@+id/buttonEjecutar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="39dp"
+        android:layout_marginStart="4dp"
+        android:onClick="btnEjecutar"
+        android:text="Ejecutar"
+        app:layout_constraintBottom_toTopOf="@+id/buttonEjecutarHilo"
+        app:layout_constraintStart_toStartOf="@+id/buttonAsincrono"
+        app:layout_constraintTop_toBottomOf="@+id/buttonAsincrono" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="198dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonCancelar" />
+
+    <Button
+        android:id="@+id/buttonEjecutarHilo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="17dp"
+        android:onClick="btnEjecutarHilo"
+        android:text="Ejecutar Hilo"
+        app:layout_constraintBottom_toTopOf="@+id/buttonCancelar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonEjecutar" />
+
+    <Button
+        android:id="@+id/buttonAsincrono"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:onClick="Asincrono"
+        android:text="Asincrono"
+        app:layout_constraintBottom_toTopOf="@+id/buttonEjecutar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonDialogo" />
+
+    <Button
+        android:id="@+id/buttonCancelar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="67dp"
+        android:layout_marginEnd="16dp"
+        android:onClick="Cancelar"
+        android:text="Cancelar"
+        app:layout_constraintBottom_toTopOf="@+id/progressBar"
+        app:layout_constraintEnd_toEndOf="@+id/buttonEjecutarHilo"
+        app:layout_constraintTop_toBottomOf="@+id/buttonEjecutarHilo" />
+
+    <Button
+        android:id="@+id/buttonDialogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="21dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="57dp"
+        android:onClick="Dialogo"
+        android:text="DIALOGO"
+        app:layout_constraintBottom_toTopOf="@+id/buttonAsincrono"
+        app:layout_constraintStart_toStartOf="@+id/buttonAsincrono"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
